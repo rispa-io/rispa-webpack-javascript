@@ -1,22 +1,26 @@
 import getBabelrcConfig from '@rispa/core/babel'
+const HappyPack = require('happypack')
 
-const getBabelLoader = () => {
+export const getBabelLoader = () => {
+  return {
+    loader: 'happypack/loader',
+  }
+}
+
+export const getHappyPackPlugin = () => {
   const babelrcConfig = getBabelrcConfig()
-
   // add react-hot-loader/babel to babel plugins
   if (process.env.NODE_ENV === 'development') {
     const hotLoaderPlugin = require.resolve('react-hot-loader/babel')
     babelrcConfig.plugins.push(hotLoaderPlugin)
   }
 
-  const babelLoader = require.resolve('babel-loader')
-
-  return {
-    test: /\.jsx?$/,
-    exclude: /node_modules/,
-    loader: babelLoader,
-    options: babelrcConfig,
-  }
+  return new HappyPack({
+    loaders: [{
+      test: /\.jsx?$/,
+      exclude: /node_modules/,
+      loader: require.resolve('babel-loader'),
+      options: babelrcConfig,
+    }]
+  })
 }
-
-export default getBabelLoader

@@ -1,8 +1,8 @@
 {
-  "name": "@rispa/webpack",
-  "rispa:name": "webpack",
+  "name": "@rispa/webpack-javascript",
+  "rispa:name": "webpack-javascript",
   "version": "0.1.0",
-  "description": "rispa webpack plugin",
+  "description": "rispa plugin which provide webpack javascript configuration",
   "devDependencies": {
     "@rispa/eslint-config": "^1.0.0",
     "@webpack-blocks/webpack2": "^0.4.0",
@@ -20,17 +20,5 @@
     "debug": "^2.6.6",
     "express": "^4.15.2",
     "webpack": "^2.4.1"
-  },
-  "scripts": {
-    "build": "better-npm-run build"
-  },
-  "betterScripts": {
-    "build": {
-      "command": "node ./bin/build.js",
-      "env": {
-        "NODE_ENV": "production",
-        "DEBUG": "rispa:*"
-      }
-    }
   }
 }

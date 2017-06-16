@@ -1,6 +1,5 @@
 import { init, start, build } from '@rispa/core/events'
 import { server } from '@rispa/server/events'
-import runBuild from '../src/build'
 import webpackExtensionCommon from './common.wpc'
 import webpackExtensionClient from './client.wpc'
 

@@ -6,9 +6,8 @@
   "devDependencies": {
     "@rispa/eslint-config": "^1.0.0",
     "@webpack-blocks/webpack2": "^0.4.0",
-    "webpack-dev-middleware": "^1.10.2",
-    "webpack-hot-middleware": "^2.18.0",
-    "react-hot-loader": "^3.0.0-beta.6"
+    "react-hot-loader": "^3.0.0-beta.6",
+    "webpack-hot-middleware": "^2.18.0"
   },
   "dependencies": {
     "@rispa/config": "^0.1.0",
@@ -16,9 +15,6 @@
     "@rispa/server": "^0.1.0",
     "babel-core": "^6.24.0",
     "babel-loader": "^6.4.1",
-    "better-npm-run": "0.0.15",
-    "debug": "^2.6.6",
-    "express": "^4.15.2",
     "webpack": "^2.4.1"
   }
 }

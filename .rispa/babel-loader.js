@@ -4,6 +4,7 @@ const HappyPack = require('happypack')
 export const getBabelLoader = () => {
   return {
     loader: 'happypack/loader',
+    exclude: /node_modules/,
   }
 }
 

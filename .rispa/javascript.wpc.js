@@ -1,4 +1,3 @@
-import { createConfig } from '@webpack-blocks/webpack2'
 import mergeBabelConfigs from 'babel-merge'
 
 const HappyPack = require('happypack')
@@ -9,9 +8,7 @@ export const getBabelLoader = () => ({
 })
 
 export const getHappyPackPlugin = (context, registry) => {
-  const babelConfig = registry.get('babel')
-    .map(getConfig => getConfig())
-    .reduce(mergeBabelConfigs, {})
+  const babelConfig = registry.get('babel').map(getConfig => getConfig()).reduce(mergeBabelConfigs, {})
 
   // add react-hot-loader/babel to babel plugins
   if (process.env.NODE_ENV === 'development') {
@@ -20,23 +17,20 @@ export const getHappyPackPlugin = (context, registry) => {
   }
 
   return new HappyPack({
-    loaders: [{
-      test: context.fileType('application/javascript'),
-      exclude: /node_modules/,
-      loader: require.resolve('babel-loader'),
-      options: babelConfig,
-    }],
+    loaders: [
+      {
+        test: context.fileType('application/javascript'),
+        exclude: /node_modules/,
+        loader: require.resolve('babel-loader'),
+        options: babelConfig,
+      },
+    ],
   })
 }
 
-
 export default registry => context => ({
   module: {
-    rules: [
-      getBabelLoader(),
-    ],
+    rules: [getBabelLoader()],
   },
-  plugins: [
-    getHappyPackPlugin(context, registry),
-  ],
+  plugins: [getHappyPackPlugin(context, registry)],
 })

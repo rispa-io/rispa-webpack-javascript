@@ -1,12 +1,10 @@
-import { init, start, build } from '@rispa/core/events'
+import { init, build } from '@rispa/core/events'
 import { server } from '@rispa/server/events'
-import webpackExtensionCommon from './common.wpc'
-import webpackExtensionClient from './client.wpc'
+import webpackJavascriptConfig from './javascript.wpc'
 
 const activator = on => {
   const initHandler = registry => {
-    registry.add('webpack.common', webpackExtensionCommon)
-    registry.add('webpack.client', webpackExtensionCommon, webpackExtensionClient)
+    registry.add('webpack.client', webpackJavascriptConfig)
   }
 
   on(init(build), initHandler)

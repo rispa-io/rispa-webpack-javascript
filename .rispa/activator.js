@@ -4,6 +4,7 @@ import webpackJavascriptConfig from './javascript.wpc'
 
 const activator = on => {
   const initHandler = registry => {
+    registry.add('webpack.common', webpackJavascriptConfig)
     registry.add('webpack.client', webpackJavascriptConfig)
   }
 

@@ -3,14 +3,15 @@
   "rispa:name": "webpack-javascript",
   "version": "0.1.0",
   "description": "rispa plugin which provide webpack javascript configuration",
+  "license": "MIT",
   "scripts": {
     "lint": "rispa-eslint",
     "lint:fix": "rispa-eslint --fix"
   },
   "dependencies": {
-    "@rispa/config": "^0.1.0",
-    "@rispa/core": "^0.1.0",
-    "@rispa/server": "^0.1.0",
+    "@rispa/config": "^1.0.0",
+    "@rispa/core": "^1.0.0",
+    "@rispa/server": "^1.0.0",
     "@webpack-blocks/webpack2": "^0.4.0",
     "babel-core": "^6.24.0",
     "babel-loader": "^7.1.0",
@@ -32,6 +33,6 @@
     "webpack": "^2.4.1"
   },
   "devDependencies": {
-    "@rispa/eslint-config": "^1.0.0"
+    "@rispa/eslint-config": "^1.1.0"
   }
 }

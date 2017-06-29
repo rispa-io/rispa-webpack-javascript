@@ -1,7 +1,7 @@
 {
   "name": "@rispa/webpack-javascript",
   "rispa:name": "webpack-javascript",
-  "version": "0.1.0",
+  "version": "1.0.0",
   "description": "rispa plugin which provide webpack javascript configuration",
   "license": "MIT",
   "scripts": {
@@ -15,9 +15,9 @@
     "@webpack-blocks/webpack2": "^0.4.0",
     "babel-core": "^6.24.0",
     "babel-loader": "^7.1.0",
+    "babel-merge": "1.0.2",
     "babel-plugin-dynamic-import-webpack": "^1.0.1",
     "babel-plugin-transform-class-properties": "^6.24.1",
-    "babel-merge": "1.0.2",
     "babel-plugin-transform-decorators-legacy": "^1.3.4",
     "babel-plugin-transform-object-rest-spread": "^6.23.0",
     "babel-plugin-transform-react-display-name": "^6.23.0",
@@ -29,8 +29,8 @@
     "better-npm-run": "0.0.15",
     "happypack": "3.1.0",
     "react-hot-loader": "^3.0.0-beta.6",
-    "webpack-hot-middleware": "^2.18.0",
-    "webpack": "^2.4.1"
+    "webpack": "^2.4.1",
+    "webpack-hot-middleware": "^2.18.0"
   },
   "devDependencies": {
     "@rispa/eslint-config": "^1.1.0"

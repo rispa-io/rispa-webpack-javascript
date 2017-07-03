@@ -5,8 +5,8 @@
   "description": "rispa plugin which provide webpack javascript configuration",
   "license": "MIT",
   "scripts": {
-    "lint": "rispa-eslint",
-    "lint:fix": "rispa-eslint --fix"
+    "lint": "rispa-eslint .",
+    "lint:fix": "rispa-eslint . --fix"
   },
   "dependencies": {
     "@rispa/config": "^1.0.0",
@@ -33,6 +33,6 @@
     "webpack-hot-middleware": "^2.18.0"
   },
   "devDependencies": {
-    "@rispa/eslint-config": "^1.1.0"
+    "@rispa/eslint-config": "^2.0.0"
   }
 }

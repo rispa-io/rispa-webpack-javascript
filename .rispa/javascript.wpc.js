@@ -2,7 +2,8 @@ import mergeBabelConfigs from 'babel-merge'
 
 const HappyPack = require('happypack')
 
-export const getBabelLoader = () => ({
+export const getBabelLoader = context => ({
+  test: context.fileType('application/javascript'),
   exclude: /node_modules/,
   loader: require.resolve('happypack/loader'),
 })
@@ -30,7 +31,7 @@ export const getHappyPackPlugin = (context, registry) => {
 
 export default registry => context => ({
   module: {
-    rules: [getBabelLoader()],
+    rules: [getBabelLoader(context)],
   },
   plugins: [getHappyPackPlugin(context, registry)],
 })

@@ -21,8 +21,8 @@ const getHappyPackPlugin = (context, babelConfig) => new HappyPack({
 })
 
 class WebpackJavaScriptPlugin extends PluginInstance {
-  constructor(context, config) {
-    super(context, config)
+  constructor(context) {
+    super(context)
 
     this.webpack = context.get(WebpackPluginApi.pluginName)
     this.babel = context.get(BabelPluginApi.pluginName)

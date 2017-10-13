@@ -4,7 +4,7 @@
   "version": "3.0.1",
   "description": "Rispa plugin which provide Webpack JavaScript configuration",
   "license": "MIT",
-  "rispa:activator": "./.rispa/activator.js",
+  "rispa:activator": "./src/activator.js",
   "devDependencies": {
     "@rispa/eslint-config": ">=3.0.0"
   },

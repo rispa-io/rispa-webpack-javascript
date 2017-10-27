@@ -1,7 +1,7 @@
 {
   "name": "@rispa/webpack-javascript",
   "rispa:name": "webpack-javascript",
-  "version": "4.0.1",
+  "version": "4.0.2",
   "description": "Rispa plugin which provide Webpack JavaScript configuration",
   "license": "MIT",
   "rispa:activator": "./src/activator.js",
@@ -9,10 +9,10 @@
     "@rispa/eslint-config": ">=3.0.0"
   },
   "dependencies": {
-    "@rispa/config": "4.0.1",
-    "@rispa/core": "4.0.1",
-    "@rispa/webpack": "4.0.1",
-    "@rispa/babel": "4.0.1",
+    "@rispa/config": "4.0.2",
+    "@rispa/core": "4.0.2",
+    "@rispa/webpack": "4.0.2",
+    "@rispa/babel": "4.0.2",
     "@webpack-blocks/webpack2": "^0.4.0",
     "babel-core": "^6.26.0",
     "babel-loader": "^7.1.2",

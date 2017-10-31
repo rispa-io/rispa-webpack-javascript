@@ -9,13 +9,12 @@
     "@rispa/eslint-config": ">=3.0.0"
   },
   "dependencies": {
-    "@rispa/config": "4.0.1",
     "@rispa/core": "4.0.1",
     "@rispa/webpack": "4.0.1",
     "@rispa/babel": "4.0.1",
     "@webpack-blocks/webpack2": "^0.4.0",
     "babel-core": "^6.26.0",
-    "babel-loader": "^7.1.2",
+    "babel-loader": "7.1.1",
     "happypack": "^4.0.0"
   },
   "scripts": {

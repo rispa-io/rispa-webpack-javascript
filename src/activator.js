@@ -4,4 +4,7 @@ const WebpackJavaScriptPlugin = require('./WebpackJavaScriptPlugin')
 
 module.exports.default = WebpackJavaScriptPlugin
 
-module.exports.after = [WebpackPluginApi.pluginName, BabelPluginApi.pluginName]
+module.exports.after = [
+  WebpackPluginApi.pluginName,
+  BabelPluginApi.pluginName,
+]

@@ -1,7 +1,7 @@
 {
   "name": "@rispa/webpack-javascript",
   "rispa:name": "webpack-javascript",
-  "version": "4.1.0",
+  "version": "4.1.1",
   "description": "Rispa plugin which provide Webpack JavaScript configuration",
   "license": "MIT",
   "rispa:activator": "./src/activator.js",

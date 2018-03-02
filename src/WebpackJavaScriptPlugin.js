@@ -11,13 +11,13 @@ const getJavaScriptLoader = context => ({
   loader: require.resolve('happypack/loader'),
 })
 
-const getHappyPackPlugin = (context, babelConfig) => new HappyPack({
+const getHappyPackPlugin = (context, babelLoaderConfig) => new HappyPack({
   loaders: [
     {
       test: context.fileType('application/javascript'),
       exclude: /node_modules/,
       loader: require.resolve('babel-loader'),
-      options: babelConfig,
+      options: babelLoaderConfig,
     },
   ],
 })
@@ -41,7 +41,7 @@ class WebpackJavaScriptPlugin extends PluginInstance {
 
   createWebpackConfig() {
     const config = context => {
-      const babelConfig = this.babel.getConfig()
+      const babelLoaderConfig = this.babel.getConfig()
 
       return ({
         module: {
@@ -50,7 +50,7 @@ class WebpackJavaScriptPlugin extends PluginInstance {
           ],
         },
         plugins: [
-          getHappyPackPlugin(context, babelConfig),
+          getHappyPackPlugin(context, babelLoaderConfig),
         ],
       })
     }

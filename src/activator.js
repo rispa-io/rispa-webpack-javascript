@@ -1,4 +1,4 @@
-const { default: BabelPluginApi } = require('@rispa/babel')
+const BabelPluginApi = require('@rispa/babel').default
 const WebpackPluginApi = require('@rispa/webpack')
 const WebpackJavaScriptPlugin = require('./WebpackJavaScriptPlugin')
 

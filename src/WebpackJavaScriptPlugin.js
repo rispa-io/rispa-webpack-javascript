@@ -1,7 +1,9 @@
 const { PluginInstance } = require('@rispa/core')
 const HappyPack = require('happypack')
 const WebpackPluginApi = require('@rispa/webpack')
-const { default: BabelPluginApi } = require('@rispa/babel')
+const BabelPluginApi = require('@rispa/babel').default
+const babelConfig = require('./configs/babel-options')
+const clientWebpackConfig = require('./configs/client.wpc')
 
 const getJavaScriptLoader = context => ({
   test: context.fileType('application/javascript'),
@@ -9,13 +11,13 @@ const getJavaScriptLoader = context => ({
   loader: require.resolve('happypack/loader'),
 })
 
-const getHappyPackPlugin = (context, babelConfig) => new HappyPack({
+const getHappyPackPlugin = (context, babelLoaderConfig) => new HappyPack({
   loaders: [
     {
       test: context.fileType('application/javascript'),
       exclude: /node_modules/,
       loader: require.resolve('babel-loader'),
-      options: babelConfig,
+      options: babelLoaderConfig,
     },
   ],
 })
@@ -29,25 +31,29 @@ class WebpackJavaScriptPlugin extends PluginInstance {
   }
 
   start() {
+    this.babel.addConfig(babelConfig)
+
     const config = this.createWebpackConfig()
 
-    this.webpack.addClientConfig(config)
+    this.webpack.addClientConfig(config, clientWebpackConfig)
     this.webpack.addCommonConfig(config)
   }
 
   createWebpackConfig() {
-    const babelConfig = this.babel.getConfig()
+    const config = context => {
+      const babelLoaderConfig = this.babel.getConfig()
 
-    const config = context => ({
-      module: {
-        rules: [
-          getJavaScriptLoader(context),
+      return ({
+        module: {
+          rules: [
+            getJavaScriptLoader(context),
+          ],
+        },
+        plugins: [
+          getHappyPackPlugin(context, babelLoaderConfig),
         ],
-      },
-      plugins: [
-        getHappyPackPlugin(context, babelConfig),
-      ],
-    })
+      })
+    }
 
     return config
   }

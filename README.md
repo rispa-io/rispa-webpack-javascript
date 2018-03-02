@@ -1,4 +1,6 @@
 # Rispa Webpack Javascript [![Build Status](https://api.travis-ci.org/rispa-io/rispa-webpack-javascript.svg?branch=master)](https://travis-ci.org/rispa-io/rispa-webpack-javascript)
+
+[![Greenkeeper badge](https://badges.greenkeeper.io/rispa-io/rispa-webpack-javascript.svg)](https://greenkeeper.io/)
 **Rispa** plugin with `webpack` configuration for *Javascript*
 
 ## How to use

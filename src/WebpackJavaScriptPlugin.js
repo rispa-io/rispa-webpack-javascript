@@ -2,7 +2,7 @@ const { PluginInstance } = require('@rispa/core')
 const HappyPack = require('happypack')
 const WebpackPluginApi = require('@rispa/webpack')
 const BabelPluginApi = require('@rispa/babel').default
-const babelConfig = require('./configs/babel-options')
+const babelConfig = require('./configs/babel.config')
 const clientWebpackConfig = require('./configs/client.wpc')
 
 const getJavaScriptLoader = context => ({
@@ -35,7 +35,7 @@ class WebpackJavaScriptPlugin extends PluginInstance {
 
     const config = this.createWebpackConfig()
 
-    this.webpack.addClientConfig(config, clientWebpackConfig)
+    this.webpack.addClientConfig(clientWebpackConfig)
     this.webpack.addCommonConfig(config)
   }
 

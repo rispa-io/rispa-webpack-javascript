@@ -14,10 +14,11 @@
     "@rispa/babel": "4.2.x",
     "@webpack-blocks/webpack2": "^0.4.0",
     "babel-core": "^6.26.0",
-    "babel-loader": "^7.1.2",
+    "babel-loader": "7.1.1",
     "babel-preset-env": "^1.6.1",
     "babel-polyfill": "^6.26.0",
-    "happypack": "^4.0.0"
+    "happypack": "^4.0.1",
+    "webpack": "2.7.0"
   },
   "scripts": {
     "lint": "rispa-eslint .",

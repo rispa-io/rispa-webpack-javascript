@@ -13,14 +13,11 @@
     "@rispa/webpack": "4.2.x",
     "@rispa/babel": "4.2.x",
     "@webpack-blocks/webpack": "^2.0.0-alpha",
-    "babel-core": "^6.26.0",
-    "babel-loader": "7.1.1",
-    "babel-preset-env": "^1.6.1",
-    "babel-polyfill": "^6.26.0",
-    "happypack": "^5.0.0"
-  },
-  "peerDependencies": {
-    "webpack": ">=4.27.1"
+    "babel-loader": "^8.0.4",
+    "@babel/core": "7.x.x",
+    "@babel/polyfill": "^7.0.0",
+    "happypack": "^5.0.0",
+    "webpack": "4.x.x"
   },
   "scripts": {
     "lint": "rispa-eslint .",

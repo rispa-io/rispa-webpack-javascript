@@ -8,9 +8,13 @@ const createJavaScriptLoader = () => ({
   test: /\.(js|jsx)$/,
   exclude: /node_modules/,
   loader: require.resolve('happypack/loader'),
+  options: {
+    id: 'js',
+  },
 })
 
 const createHappyPackPlugin = babelLoaderConfig => new HappyPack({
+  id: 'js',
   loaders: [
     {
       test: /\.(js|jsx)$/,
@@ -19,6 +23,8 @@ const createHappyPackPlugin = babelLoaderConfig => new HappyPack({
       options: babelLoaderConfig,
     },
   ],
+  threads: 4,
+  verbose: false,
 })
 
 class WebpackJavaScriptPlugin extends PluginInstance {

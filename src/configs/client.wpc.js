@@ -1,9 +1,14 @@
 const polyfill = require.resolve('./polyfill')
 
-module.exports = (context, { merge }) => merge({
+module.exports = () => prevConfig => ({
+  ...prevConfig,
   entry: {
-    vendors: !process.env.DISABLE_POLYFILL ? [
-      polyfill,
-    ] : [],
+    ...prevConfig.entry,
+    client: [
+      ...(!process.env.DISABLE_POLYFILL ? [
+        polyfill,
+      ] : []),
+      ...prevConfig.entry.client,
+    ],
   },
 })

@@ -17,7 +17,7 @@
     "babel-loader": "7.1.1",
     "babel-preset-env": "^1.6.1",
     "babel-polyfill": "^6.26.0",
-    "happypack": "^4.0.1",
+    "happypack": "^5.0.1",
     "webpack": "2.7.0"
   },
   "scripts": {
